@@ -13,17 +13,6 @@ const int R0 = 100000;            // R0 = 100k
 const int pinTempSensor = A0;     // Grove - Temperature Sensor connect to A0
 
 
-/* Mesure la température interne de l'ATmega 
-float getInternalTemp(void){
-  ADMUX = 0xC8;                // Sélectionne le port analogique 8 + référence interne 1v1
-  ADCSRA |= (1 << ADEN);       // Active le convertisseur analogique -> numérique
-  ADCSRA |= (1 << ADSC);       // Lance une conversion analogique -> numérique
-  while(ADCSRA & (1 << ADSC)); // Attend la fin de la conversion
-  uint16_t raw = ADCL | (ADCH << 8); // Récupère le résultat de la conversion
-  return (raw - 324.31 ) / 1.22;     // Calcul la température
-}*/
-
-
 double GetTemp(void)
 {
   unsigned int wADC;
